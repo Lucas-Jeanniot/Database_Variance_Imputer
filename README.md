@@ -2,6 +2,7 @@ Imputation Tool for Handling Missing Data
 Overview:
 
 This Python script provides a simple yet effective solution for handling missing data in a dataset. It utilizes the scikit-learn library to impute missing values using various strategies such as median, mean, etc.
+
 Features:
 
     Reads data from a CSV file.
