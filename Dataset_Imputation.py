@@ -17,7 +17,7 @@ X = dataset[columns_to_impute]
 missing_mask = X == 0
 
 # Handling missing data
-imputer = SimpleImputer(missing_values= 0, strategy='median')  # Strategy set to 'median' as default, since we'll handle zeros manually
+imputer = SimpleImputer(missing_values=0, strategy='median')  # Strategy set to 'median' as default, since we'll handle zeros manually
 X_imputed = imputer.fit_transform(X)
 
 # Introducing variance
