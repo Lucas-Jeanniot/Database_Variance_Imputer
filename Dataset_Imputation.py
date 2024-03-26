@@ -13,13 +13,19 @@ dataset = pd.read_csv(csv_path)
 columns_to_impute = input("Enter the columns you want to impute (separated by commas): ").split(',')
 X = dataset[columns_to_impute]
 
+# Find indices where values are 0
+missing_mask = X == 0
+
 # Handling missing data
-imputer = SimpleImputer(missing_values=0, strategy='median')  # <-- Change this to median, mean, etc depending on your dataset requirements
+imputer = SimpleImputer(missing_values= 0, strategy='median')  # Strategy set to 'median' as default, since we'll handle zeros manually
 X_imputed = imputer.fit_transform(X)
 
 # Introducing variance
 variance = np.random.uniform(low=-0.2, high=0.2, size=X_imputed.shape)
 X_imputed_with_variance = X_imputed * (1 + variance)
+
+# Apply imputed values only where the original values were 0
+X_imputed_with_variance = np.where(missing_mask, X_imputed_with_variance, X)
 
 # Update the DataFrame with the imputed values
 for i, col in enumerate(columns_to_impute):
