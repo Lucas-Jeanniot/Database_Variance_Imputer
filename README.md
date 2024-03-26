@@ -30,11 +30,13 @@ pip install numpy pandas scikit-learn
 `````
 Run the Script:
 ````
-   1. Edit the code to include your:
-      - CSV file you want to impute data on
-      - Columns you want to Impute
+   1. python Dataset_Imputation.py
+
+   2. Input:
+      - CSV path you want to impute data on
+      - Columns you want to impute
       
-   2. python impute_missing_data.py
+  
 
     Output:
     The script will generate a new CSV file with imputed values, saving it in the same directory as the original file.
@@ -68,7 +70,3 @@ dataset.to_csv('imputed_data.csv', index=False)
 
 print("Imputed data saved to 'imputed_data.csv'.")
 
-Note:
-
-    Make sure to replace 'your/file/here.csv' with the path to your dataset file.
-    Adjust the columns and strategies as per your dataset requirements.
