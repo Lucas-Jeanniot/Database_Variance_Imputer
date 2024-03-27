@@ -35,7 +35,7 @@ for i, col in enumerate(columns_to_impute):
 output_directory = os.path.dirname(csv_path)
 
 # Generate the path for the new CSV file
-new_csv_path = os.path.join(output_directory, "imputed_with_variance_" + os.path.basename(csv_path))
+new_csv_path = os.path.join(output_directory, "imputed_" + os.path.basename(csv_path))
 
 # Write the updated DataFrame back to the CSV file
 dataset.to_csv(new_csv_path, index=False)
